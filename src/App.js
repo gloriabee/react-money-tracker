@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Overview from './components/Overview'
 import BudgetStats from './components/BudgetStats'

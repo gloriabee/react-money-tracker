@@ -9,8 +9,8 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold">
+    <div className="relative mx-auto h-screen">
+      <h1 className="lg:text-3xl sm:text-lg font-bold text-center mt-4">
         Expense Tracker App
       </h1>
       <Overview/>

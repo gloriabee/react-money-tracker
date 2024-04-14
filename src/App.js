@@ -14,15 +14,13 @@ function App() {
       <h1 className="lg:text-3xl sm:text-lg font-bold text-center mt-4 text-white">
         Expense Tracker App
       </h1>
-      
-
       <Overview/>
-      <div className="stats-container mt-12 flex justify-between">
+      <div className="stats-container mt-12 flex lg:justify-between  justify-center flex-wrap md:flex-nowrap">
        <BudgetStats/>
        <CategoriesStats/>
       </div>
 
-      <div className="transactions-container mt-12 flex justify-between">
+      <div className="transactions-container mt-12 flex lg:justify-between  justify-center flex-wrap md:flex-nowrap">
         <Form/>
         <History/>
       </div>

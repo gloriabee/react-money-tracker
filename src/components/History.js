@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function History() {
   return (
-    <div className="w-1/2">
+    <div className="md:w-1/2 mb-4 md:mb-0">
       <h1 className="text-2xl text-white font-bold">History</h1>
 
       <ul className="mt-4 item">

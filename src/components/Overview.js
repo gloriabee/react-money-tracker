@@ -4,7 +4,7 @@ export default function Overview() {
   return (
    <div className=" mx-auto overview mt-4">
      <h1 className="text-2xl font-bold mb-2 text-white">Monthly Overview</h1>
-     <div className="flex justify-between items-center">
+     <div className="flex flex-col md:flex-row justify-between items-center">
       {/* Balance */}
       <div className="bg-cardBg text-cardText py-2 px-9">
         <h3 className="text-lg font-bold ">Balance</h3>

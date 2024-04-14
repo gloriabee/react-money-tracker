@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Form() {
   return (
-   <div className='w-1/2'>
+   <div className='md:w-1/2 lg:mr-5 md:mr-5 mb-4 md:mb-0'>
      <h1 className="text-2xl text-white mb-3 font-bold">Add transaction</h1>
       <form className='mt-4'>
        <div className="max-w-96 mb-2">

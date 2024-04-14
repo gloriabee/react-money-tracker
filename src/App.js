@@ -6,23 +6,28 @@ import Form from './components/Form';
 import History from './components/History';
 import Footer from './components/Footer';
 
+
 function App() {
   return (
-    <div className="relative mx-auto h-screen">
-      <h1 className="lg:text-3xl sm:text-lg font-bold text-center mt-4">
+    <div className="app-container">
+      <div className="container mx-auto px-4">
+      <h1 className="lg:text-3xl sm:text-lg font-bold text-center mt-4 text-white">
         Expense Tracker App
       </h1>
+      
+
       <Overview/>
-      <div className="stats-container">
+      <div className="stats-container mt-12 flex justify-between">
        <BudgetStats/>
        <CategoriesStats/>
       </div>
 
-      <div className="transactions-container">
+      <div className="transactions-container mt-12 flex justify-between">
         <Form/>
         <History/>
       </div>
 
+      </div>
       <Footer/>
       
     </div>

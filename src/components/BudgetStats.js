@@ -1,7 +1,14 @@
 import React from 'react'
+import {BarChart} from '../components/Bar';
 
 export default function budgetStats() {
   return (
-    <h1 className="text-3xl text-yellow-400">Budget Statistics</h1>
+    <div className='w-1/2'>
+      <h1 className="text-2xl text-white font-bold">Budget Statistics</h1>
+      <div className='bg-cardBg w-[500px] mt-4'>
+        <BarChart/>
+      </div>
+    </div>
+   
   )
 }

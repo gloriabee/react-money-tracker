@@ -1,6 +1,16 @@
 import React from 'react'
 
-export default function Overview() {
+export default function Overview({transactions}) {
+  let amounts=transactions.map(t=>parseFloat(t.amount));
+  let balance=amounts.reduce((acc,item)=>(acc+=item),0);
+  let income=amounts
+  .filter(item=>item>0)
+  .reduce((acc,item)=>(acc+=item),0);
+
+  let expenses=amounts
+  .filter(item => item<0)
+  .reduce((acc,item)=>(acc+=item),0);
+ 
   return (
    <div className=" mx-auto overview mt-4">
      <h1 className="text-2xl font-bold mb-2 text-white">Monthly Overview</h1>
@@ -8,19 +18,19 @@ export default function Overview() {
       {/* Balance */}
       <div className="bg-cardBg text-cardText py-2 px-9 mb-4 md:mb-0 md:mr-4">
         <h3 className="text-lg font-bold ">Balance</h3>
-        <p>$ 4000</p>
+        <p>${balance}</p>
       </div>
 
       {/* Income */}
       <div className="bg-cardBg text-cardText py-2 px-9 mb-4 md:mb-0 md:mr-4">
             <h3 className="text-lg font-bold ">Income</h3>
-            <p className='text-green-400'>$ 4000</p>
+            <p className='text-green-400'>${income}</p>
       </div> 
 
       {/* Expenses */}
       <div className="bg-cardBg text-cardText py-2 px-9 mb-4 md:mb-0 md:mr-4">
             <h3 className="text-lg font-bold ">Expenses</h3>
-            <p className='text-red-400'>$ 4000</p>
+            <p className='text-red-400'>${expenses}</p>
       </div>
 
      </div>

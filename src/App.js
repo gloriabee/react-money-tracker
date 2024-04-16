@@ -19,6 +19,33 @@ function App() {
     })
   },[]);
 
+  let addTransaction=(transaction)=>{
+    //server
+    fetch('http://localhost:3001/transactions',{
+      method:"POST",
+      headers:{
+        "Content-Type": "application/json",
+      },
+      body:JSON.stringify(transaction)
+    })
+    //client
+    setTransaction(prevState=>[...prevState,transaction]);
+  }
+
+
+  let deleteTransaction=(transactionId)=>{
+    //server
+    fetch(`http://localhost:3001/transactions/${transactionId}`,{
+      method:"DELETE"
+    })
+
+    //client
+    setTransaction(prevState => {
+      return prevState.filter(t=>{
+        return t.id !== transactionId
+      });
+    })
+  }
   
   return (
     <div className="app-container">
@@ -26,15 +53,15 @@ function App() {
       <h1 className="lg:text-3xl sm:text-lg font-bold text-center mt-4 text-white">
         Expense Tracker App
       </h1>
-      <Overview/>
+      <Overview transactions={transactions}/>
       <div className="stats-container mt-12 flex lg:justify-between  justify-center flex-wrap md:flex-nowrap">
        <BudgetStats/>
        <CategoriesStats/>
       </div>
 
       <div className="transactions-container mt-12 flex lg:justify-between  justify-center flex-wrap md:flex-nowrap">
-        <Form/>
-        <History transactions={transactions}/>
+        <Form addTransaction={addTransaction}/>
+        <History transactions={transactions} deleteTransaction={deleteTransaction}/>
       </div>
 
       </div>

@@ -4,7 +4,29 @@ import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
 import '../App.css';
 
-export default function Form() {
+export default function Form({addTransaction}) {
+  let handleSubmit=(e)=>{
+    e.preventDefault();
+    let transaction={
+      id:Math.random(),
+      title,
+      category,
+      date:date.toLocaleDateString(),
+      amount
+    }
+
+    // add transaction
+    addTransaction(transaction);
+
+    // clearing all input
+
+  }
+
+  let handleDateChange=(selectedDate)=>{
+    setDate(selectedDate);
+  }
+
+
   let [title,setTitle]=useState('');
   let [amount,setAmount]=useState('');
   let [date,setDate]=useState(new Date());
@@ -14,7 +36,7 @@ export default function Form() {
   return (
    <div className='md:w-1/2 lg:mr-5 md:mr-5 mb-4 md:mb-0'>
      <h1 className="text-2xl text-white mb-3 font-bold">Add transaction</h1>
-      <form className='mt-4'>
+      <form className='mt-4' onSubmit={handleSubmit}>
        <div className="max-w-96 mb-2">
         <label className='text-white'>Title</label>
           <input type="text" 
@@ -27,7 +49,7 @@ export default function Form() {
         <div className="max-w-96 mb-2">
         <label className='text-white'>Date</label>
           {/* <input type="text" className='p-2 bg-cardBg w-full focus:outline-none text-white' placeholder='enter the date'/> */}
-          <DatePicker className='p-2 bg-cardBg w-full border-none' onChange={setDate} value={date}/>
+          <DatePicker className='p-2 bg-cardBg w-full border-none' onChange={handleDateChange} value={date}/>
         </div>
 
         <div className="max-w-96 mb-2">
@@ -51,7 +73,7 @@ export default function Form() {
         </div>
 
       <div className="max-w-96 mb-2">
-      <button className='bg-btnGreen text-center p-2 text-white w-full'>Add Transaction</button>
+      <button className='bg-btnGreen text-center p-2 text-white w-full' type="submit">Add Transaction</button>
       </div>
        
        

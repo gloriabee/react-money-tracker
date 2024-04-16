@@ -1,32 +1,18 @@
 {
-    "transactions":[
-        {
-            "id":1,
-            "title":"title 1",
-            "category":"transportation",
-            "date":"4/12/2024",
-            "amount":3000
-        },
-        {
-            "id":2,
-            "title":"title 2",
-            "category":"transportation",
-            "date":"4/12/2024",
-            "amount":-300
-        },
-        {
-            "id":3,
-            "title":"title 3",
-            "category":"transportation",
-            "date":"4/12/2024",
-            "amount":-500
-        },
-        {
-            "id":4,
-            "title":"title 4",
-            "category":"transportation",
-            "date":"4/12/2024",
-            "amount":400
-        }
-    ]
+  "transactions": [
+    {
+      "id": 1,
+      "title": "title 1",
+      "category": "transportation",
+      "date": "4/12/2024",
+      "amount": 3000
+    },
+    {
+      "id": 0.495324848690339,
+      "title": "pocket money",
+      "category": "Entertainment",
+      "date": "4/16/2024",
+      "amount": "100"
+    }
+  ]
 }

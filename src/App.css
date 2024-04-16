@@ -5,3 +5,22 @@
 body{
   background-color: black;
 }
+.item li:hover .delete-btn{
+  opacity: 1;
+}
+
+.react-date-picker__wrapper{
+  border: none !important;
+}
+.react-date-picker{
+  color: white;
+}
+
+.react-date-picker__button > svg{
+  stroke: white;
+}
+
+.react-calendar{
+  color: black;
+}
+

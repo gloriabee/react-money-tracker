@@ -5,9 +5,21 @@ import CategoriesStats from './components/CategoriesStats';
 import Form from './components/Form';
 import History from './components/History';
 import Footer from './components/Footer';
+import { useEffect, useState } from 'react';
 
 
 function App() {
+  let [transactions,setTransaction]=useState([]);
+
+  useEffect(()=>{
+    fetch('http://localhost:3001/transactions')
+    .then(res => res.json())
+    .then((transactions)=>{
+      setTransaction(transactions);
+    })
+  },[]);
+
+  
   return (
     <div className="app-container">
       <div className="container mx-auto px-4">
@@ -22,7 +34,7 @@ function App() {
 
       <div className="transactions-container mt-12 flex lg:justify-between  justify-center flex-wrap md:flex-nowrap">
         <Form/>
-        <History/>
+        <History transactions={transactions}/>
       </div>
 
       </div>

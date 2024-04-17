@@ -55,7 +55,7 @@ function App() {
       </h1>
       <Overview transactions={transactions}/>
       <div className="stats-container mt-12 flex lg:justify-between  justify-center flex-wrap md:flex-nowrap">
-       <BudgetStats/>
+       <BudgetStats transactions={transactions}/>
        <CategoriesStats transactions={transactions}/>
       </div>
 

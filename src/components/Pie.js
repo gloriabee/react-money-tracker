@@ -5,9 +5,6 @@ import {
     Legend,
     ArcElement
 } from "chart.js";
-// import { pieChartData } from "../FAKE_DATA";
-import { transactions } from "../data/db.json";
-
 ChartJS.register(
     Tooltip,
     Legend,

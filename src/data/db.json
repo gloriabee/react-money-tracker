@@ -1,13 +1,6 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "title": "title 1",
-      "category": "transportation",
-      "date": "4/12/2024",
-      "amount": 3000
-    },
-    {
       "id": 0.495324848690339,
       "title": "pocket money",
       "category": "Entertainment",
@@ -15,18 +8,25 @@
       "amount": "100"
     },
     {
-      "id": 0.5921892051664999,
-      "title": "washing",
-      "category": "Groceries",
-      "date": "4/16/2024",
-      "amount": "-80"
-    },
-    {
-      "id": 0.6099199494625973,
+      "id": 0.9820334457056661,
       "title": "food",
       "category": "Food",
-      "date": "4/16/2024",
-      "amount": "-400"
+      "date": "4/17/2024",
+      "amount": "-20"
+    },
+    {
+      "id": 0.47284807802203366,
+      "title": "fruits",
+      "category": "Food",
+      "date": "4/14/2024",
+      "amount": "-100"
+    },
+    {
+      "id": 0.7390067349925649,
+      "title": "bonus",
+      "category": "Transportation",
+      "date": "4/1/2024",
+      "amount": "1000"
     }
   ]
 }

@@ -19,7 +19,10 @@ export default function Form({addTransaction}) {
     addTransaction(transaction);
 
     // clearing all input
-
+    setTitle('');
+    setAmount('');
+    setDate('');
+    setCategory('Transportation');
   }
 
   let handleDateChange=(selectedDate)=>{

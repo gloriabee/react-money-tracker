@@ -27,6 +27,13 @@
       "category": "Transportation",
       "date": "4/1/2024",
       "amount": "1000"
+    },
+    {
+      "id": 0.7158746187351539,
+      "title": "grab",
+      "category": "Transportation",
+      "date": "4/17/2024",
+      "amount": "-129"
     }
   ]
 }

@@ -1,7 +1,8 @@
 import React from 'react'
 
-export default function Overview({transactions}) {
-  let amounts=transactions.map(t=>parseFloat(t.amount));
+export default function Overview({filteredTransactions}) {
+ 
+  let amounts=filteredTransactions.map(t=> parseFloat(t.amount));
   let balance=amounts.reduce((acc,item)=>(acc+=item),0);
   let income=amounts
   .filter(item=>item>0)
@@ -13,7 +14,11 @@ export default function Overview({transactions}) {
  
   return (
    <div className=" mx-auto overview mt-4">
+    
+
+     <div className="flex items-center mb-4 justify-between">
      <h1 className="text-2xl font-bold mb-2 text-white">Monthly Overview</h1>
+     </div>
      <div className="flex flex-col md:flex-row justify-between items-center">
       {/* Balance */}
       <div className="bg-cardBg text-cardText py-2 px-9 mb-4 md:mb-0 md:mr-4">

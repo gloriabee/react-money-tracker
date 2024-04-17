@@ -46,13 +46,13 @@ export default function Form({addTransaction}) {
           className='p-2 bg-cardBg w-full focus:outline-none text-white' 
           placeholder='eg-smoothie'
           onChange={e=> setTitle(e.target.value)}
-          value={title}/>
+          value={title} required/>
         </div>
 
         <div className="max-w-96 mb-2">
         <label className='text-white'>Date</label>
           {/* <input type="text" className='p-2 bg-cardBg w-full focus:outline-none text-white' placeholder='enter the date'/> */}
-          <DatePicker className='p-2 bg-cardBg w-full border-none' onChange={handleDateChange} value={date}/>
+          <DatePicker className='p-2 bg-cardBg w-full border-none' onChange={handleDateChange} value={date} required/>
         </div>
 
         <div className="max-w-96 mb-2">
@@ -72,7 +72,7 @@ export default function Form({addTransaction}) {
           className='p-2 bg-cardBg w-full focus:outline-none text-white'
            placeholder='(negative - expense, positive - income)'
            onChange={e=>setAmount(e.target.value)}
-           value={amount}/>
+           value={amount} required/>
         </div>
 
       <div className="max-w-96 mb-2">

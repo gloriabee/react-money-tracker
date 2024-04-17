@@ -19,13 +19,13 @@ ChartJS.register(
     Legend
 )
 
-export const BarChart=({transactions})=>{
+export const BarChart=({filteredTransactions})=>{
     const today=new Date();
-    const filteredTransactions= transactions.filter(t=>{
+    const ftrTransition= filteredTransactions.filter(t=>{
         const transactionDate=new Date(t.date);
         return transactionDate<=today;
     })
-   const groupedTransactions=filteredTransactions.reduce((acc,transaction)=>{
+   const groupedTransactions=ftrTransition.reduce((acc,transaction)=>{
     const date=transaction.date;
     const amount=parseFloat(transaction.amount);
 

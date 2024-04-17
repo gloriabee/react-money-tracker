@@ -12,8 +12,11 @@ ChartJS.register(
 )
 
 
-export const PieChart=({transactions})=>{
-    let categoryTotal=transactions.reduce((acc,transaction)=>{
+export const PieChart=({filteredTransactions})=>{
+    if (!filteredTransactions) {
+        return null; // Return null or a loading indicator
+      }
+    let categoryTotal=filteredTransactions.reduce((acc,transaction)=>{
         let {category,amount}=transaction;
         let parsedAmount=parseFloat(amount);
         if(parsedAmount<0){

@@ -9,49 +9,31 @@ import { useEffect, useState } from 'react';
 
 
 function App() {
-  let [transactions,setTransaction]=useState([]);
+  let [transactions,setTransaction]=useState(
+    JSON.parse(localStorage.getItem('transactions')) || []
+  );
 
   useEffect(()=>{
-    fetch('http://localhost:3001/transactions')
-    .then(res => res.json())
-    .then((transactions)=>{
-      setTransaction(transactions);
-    })
-  },[]);
+   localStorage.setItem('transactions',JSON.stringify(transactions))
+  },[transactions]);
 
   let addTransaction=(transaction)=>{
-    //server
-    fetch('http://localhost:3001/transactions',{
-      method:"POST",
-      headers:{
-        "Content-Type": "application/json",
-      },
-      body:JSON.stringify(transaction)
-    })
-    //client
-    setTransaction(prevState=>[...prevState,transaction]);
+    
+    setTransaction([...transactions,transaction])
   }
 
 
   let deleteTransaction=(transactionId)=>{
     //server
-    fetch(`http://localhost:3001/transactions/${transactionId}`,{
-      method:"DELETE"
-    })
-
-    //client
-    setTransaction(prevState => {
-      return prevState.filter(t=>{
-        return t.id !== transactionId
-      });
-    })
+   const updatedTransactions=transactions.filter(t=>t.id !== transactionId);
+   setTransaction(updatedTransactions);
   }
   
   return (
     <div className="app-container">
       <div className="container mx-auto px-4">
       <h1 className="lg:text-3xl sm:text-lg font-bold text-center mt-4 text-white">
-        Expense Tracker App
+        Money Tracker App
       </h1>
       <Overview transactions={transactions}/>
       <div className="stats-container mt-12 flex lg:justify-between  justify-center flex-wrap md:flex-nowrap">
